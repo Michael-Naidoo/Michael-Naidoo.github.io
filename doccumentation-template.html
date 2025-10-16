@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation: Project Echo System Architecture - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Custom Styles for Documentation Detail Page Layout -->
+    <style>
+        /* General documentation structure */
+        .doc-layout {
+            display: flex;
+            padding: 20px 0;
+            gap: 30px;
+        }
+
+        /* SIDEBAR (Table of Contents) */
+        .doc-sidebar {
+            flex: 0 0 250px; /* Fixed width sidebar */
+            padding-right: 20px;
+            background-color: var(--color-bg-primary); 
+            border-right: 1px solid #333;
+            /* Sticky positioning for long documents */
+            position: sticky;
+            top: 70px; /* Below the main header */
+            height: calc(100vh - 70px); /* Fill remaining viewport height */
+            overflow-y: auto; /* Scrollable if TOC is long */
+        }
+        
+        .doc-sidebar h3 {
+            color: var(--color-accent);
+            border-bottom: 2px solid var(--color-accent);
+            padding-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .doc-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .doc-sidebar li {
+            margin-bottom: 10px;
+        }
+        
+        .doc-sidebar a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            font-size: 0.9em;
+            transition: color 0.2s, background-color 0.2s;
+            border-radius: 3px;
+        }
+
+        .doc-sidebar a:hover, .doc-sidebar a.active {
+            color: var(--color-bg-primary);
+            background-color: var(--color-accent-dark);
+            padding-left: 5px;
+        }
+        
+        /* MAIN CONTENT AREA */
+        .doc-content {
+            flex-grow: 1;
+            max-width: 900px;
+        }
+
+        .doc-content h2 {
+            margin-top: 50px;
+            color: var(--color-accent);
+            padding-bottom: 5px;
+            border-bottom: 1px solid #444;
+        }
+
+        .doc-content h3 {
+            margin-top: 30px;
+            color: var(--color-text-light);
+        }
+        
+        /* Styling for Code Blocks */
+        .doc-content pre {
+            background-color: #111;
+            color: #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid var(--color-accent);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 20px 0;
+        }
+
+        .doc-content code {
+            background-color: #2a2c30;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: var(--color-accent);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .doc-layout {
+                flex-direction: column;
+            }
+            .doc-sidebar {
+                position: static; /* Stop sticking on smaller screens */
+                height: auto;
+                overflow-y: visible;
+                padding-right: 0;
+                border-right: none;
+                border-bottom: 1px solid #333;
+                margin-bottom: 20px;
+            }
+            .doc-sidebar h3 {
+                cursor: pointer;
+            }
+            .doc-sidebar ul {
+                display: none; /* Hide TOC list by default on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HEADER/NAVIGATION (Standard, using existing CSS) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">My Portfolio</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="writing.html" class="active">Writing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- DOCUMENTATION HERO SECTION -->
+    <section class="section" style="padding: 40px 0 20px 0;">
+        <div class="container">
+            <h1 style="text-align: center; color: var(--color-accent);">Project Echo System Architecture (v2.1)</h1>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto; color: #999;">Detailed documentation covering the microservices, data flow, and design decisions for the Echo real-time communication platform.</p>
+        </div>
+    </section>
+
+    <!-- DOCUMENTATION LAYOUT -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container doc-layout">
+            
+            <!-- LEFT SIDEBAR: TABLE OF CONTENTS (TOC) -->
+            <aside class="doc-sidebar">
+                <h3 id="toc-header">Table of Contents</h3>
+                <ul id="toc-list">
+                    <li><a href="#overview" class="active">1. Overview & Goals</a></li>
+                    <li><a href="#architecture">2. System Architecture</a></li>
+                    <li><a href="#data-model">3. Data Modeling (Firestore)</a></li>
+                    <li><a href="#api">4. Client API Endpoints</a></li>
+                    <li><a href="#design">5. Core Design Decisions</a></li>
+                    <li><a href="#deployment">6. Deployment & Scaling</a></li>
+                </ul>
+            </aside>
+            
+            <!-- RIGHT CONTENT AREA -->
+            <article class="doc-content">
+
+                <h2 id="overview">1. Overview & Goals</h2>
+                <p>Project Echo is designed to be a highly available, low-latency, real-time message broadcasting system. The primary goal was to achieve sub-100ms message delivery reliability using a serverless architecture based on Google Cloud Functions and Firestore.</p>
+
+                <h2 id="architecture">2. System Architecture</h2>
+                <p>The system utilizes a microservices approach to separate concerns for Authentication, Messaging, and Presence. This modularity allows for independent scaling of each component based on load requirements.</p>
+
+                <h3>2.1. Component Breakdown</h3>
+                <ul>
+                    <li>**Auth Service:** Handles user login and custom token generation using Firebase Auth.</li>
+                    <li>**Message Service:** Manages writing messages to Firestore and triggering fan-out via Cloud Functions.</li>
+                    <li>**Presence Service:** Utilizes Firestore's real-time listeners for user online status updates.</li>
+                </ul>
+                
+                <h2 id="data-model">3. Data Modeling (Firestore)</h2>
+                <p>All persistent data is stored in **Firestore**. We adopted a denormalized structure to minimize read operations for common queries, particularly for retrieving recent messages.</p>
+
+                <h3>3.1. Messages Collection Schema</h3>
+                <p>The main collection, <code>/artifacts/{appId}/public/data/messages</code>, stores message documents with the following fields:</p>
+                <pre>
+{
+  "senderId": "string (UID)",
+  "text": "string (message content)",
+  "timestamp": "timestamp (server time)",
+  "roomId": "string (group ID)",
+  "readBy": "array<string> (list of user IDs who read it)"
+}
+                </pre>
+
+                <h2 id="api">4. Client API Endpoints</h2>
+                <p>The client interacts via two primary mechanisms: **HTTPS Callable Functions** for non-realtime operations (like login) and **Firestore Snapshots** for real-time data flow.</p>
+
+                <h3>4.1. HTTPS Callable: <code>createRoom</code></h3>
+                <p>This function creates a new chat room and initializes the Firestore document. It requires authentication.</p>
+                <pre>
+const roomData = await firebase.functions().httpsCallable('createRoom')({ 
+  name: 'New Discussion Group',
+  type: 'public' 
+});
+// Response: { roomId: "xyz-123" }
+                </pre>
+
+                <h2 id="design">5. Core Design Decisions</h2>
+                <p>The decision to use **Firestore Realtime Listeners** over dedicated WebSocket servers was based on reducing infrastructure maintenance overhead and leveraging the built-in scalability of the platform. While this increases client-side complexity (handling the denormalized data), it drastically simplifies the server-side deployment model.</p>
+
+                <h2 id="deployment">6. Deployment & Scaling</h2>
+                <p>The entire application is deployed using the Firebase CLI. Scaling is handled automatically by Google Cloud Functions (vertical scaling) and Firestore (horizontal scaling).</p>
+
+            </article>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Standard, using existing CSS) -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new game concepts, writing opportunities, or freelance work.</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Standard, using existing CSS) -->
+    <footer>
+        <div class="container">
+            <div class="copyright-info">
+                <div class="social-links">
+                    <a href="#">GitHub</a> | 
+                    <a href="#">LinkedIn</a> |
+                    <a href="#">Twitter</a>
+                </div>
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Mobile TOC Toggle and Active Link -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocHeader = document.getElementById('toc-header');
+            const tocList = document.getElementById('toc-list');
+            const docContent = document.querySelector('.doc-content');
+
+            // 1. Mobile Toggle
+            if (window.innerWidth < 992) {
+                tocHeader.addEventListener('click', () => {
+                    tocList.style.display = tocList.style.display === 'block' ? 'none' : 'block';
+                });
+            }
+
+            // 2. Active Link Highlighting (Simple Intersection Observer)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const link = document.querySelector(`.doc-sidebar a[href="#${id}"]`);
+                    
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                        document.querySelectorAll('.doc-sidebar a').forEach(a => a.classList.remove('active'));
+                        if (link) {
+                            link.classList.add('active');
+                        }
+                    } else if (!entry.isIntersecting && entry.intersectionRatio < 0.5) {
+                         if (link) {
+                            link.classList.remove('active');
+                        }
+                    }
+                });
+            }, {
+                rootMargin: '0px 0px -50% 0px', // Trigger when section hits middle of viewport
+                threshold: [0, 0.5]
+            });
+
+            // Observe all headings in the main content
+            document.querySelectorAll('.doc-content h2').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    
+</body>
+</html>

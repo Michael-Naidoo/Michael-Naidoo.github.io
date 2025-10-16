@@ -1,3 +1,9 @@
+/* -------------------------------------------------------------------------- */
+/* 1. BASE STYLES & RESETS */
+/* -------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
 :root {
     --color-bg-primary: #1D1E22;
     --color-text-light: #E0E0E0;
@@ -6,6 +12,12 @@
     --color-card-bg: #FFFFFF;
     --color-text-dark: #333333;
     --color-input-bg: #2a2c30; /* New color for form fields */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* === 1. GLOBAL STYLES & RESETS === */
@@ -141,7 +153,7 @@ header a:hover {
     transform: translateY(-2px);
 }
 
-/* === 5. PROJECT GRID & CARD STYLES === */
+/* === 5. PROJECT GRID & CARD STYLES (Used in games.html and index.html) === */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -324,4 +336,144 @@ header a:hover {
 
 .copyright-info .social-links a {
     margin: 0 10px;
+}
+
+/* === 8. RESPONSIVENESS (Mobile First Adjustments) === */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .section {
+        padding: 40px 0;
+    }
+
+    /* Navigation adjustments */
+    header nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Hero adjustments */
+    #hero {
+        padding: 60px 0;
+    }
+
+    #hero h2 {
+        font-size: 2em;
+    }
+    
+    #hero p {
+        font-size: 1em;
+    }
+
+    /* Button adjustments */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    /* Grid adjustment */
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* === 9. WRITING PAGE SPECIFIC STYLES (Adapted to new color scheme) === */
+
+.article-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    /* Using new variables for consistency (light card on dark background) */
+    background: var(--color-card-bg); 
+    color: var(--color-text-dark); 
+    padding: 25px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--color-accent); /* Accent border on the left */
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.article-card h3 {
+    color: var(--color-text-dark); /* Title is dark on light card */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    color: #666; /* Subtler text color */
+}
+
+.meta-info .category {
+    font-weight: 600;
+    color: var(--color-accent-dark);
+}
+
+.summary {
+    font-style: italic;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.keywords {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.keywords li {
+    background-color: rgba(0, 188, 212, 0.1); /* Light accent background */
+    color: var(--color-accent-dark);
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+.read-link {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-accent);
+}
+
+/* Category Headers for writing page */
+.category-heading {
+    color: var(--color-accent);
+    font-size: 1.8em;
+    border-bottom: 2px solid var(--color-accent-dark);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-style: italic;
+    font-size: 1em;
+    color: #999;
+    margin-bottom: 30px;
 }

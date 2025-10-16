@@ -3,35 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writing & Articles | Michael Naidoo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Michael Naidoo | Writing & Articles</title>
+    <!-- Ensure your global styles from css/style.css are linked here -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    <main>
-        <section id="writing-list" class="section">
-            <div class="container">
-                <h1>Technical Writing & Creative Pieces</h1>
-                <p>My thoughts on game development methodologies, new technologies, and creative storytelling.</p>
-                
-                <div class="article-list">
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Michael Naidoo</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games & Projects</a></li>
+                    <li><a href="writing.html" class="active">Writing & Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                    <div class="article-item">
-                        <div class="article-info">
-                            <h2><a href="article-detail-01.html">The Case for ECS in Mid-Sized Projects</a></h2>
-                            <p class="date">Published: October 16, 2025</p>
-                            <p class="summary">A deep dive into why the Entity Component System (ECS) architecture can streamline development outside of massive AAA games, focusing on performance gains and modularity.</p>
+    <main>
+        <!-- WRITING INTRO SECTION -->
+        <section id="writing-intro" class="hero small-hero">
+            <div class="container">
+                <h2>Idea Generation, Research, and Communication</h2>
+                <p>
+                    This page showcases my ability to communicate complex concepts across different mediums: from **Creative** storytelling and **Research** analysis to clear **System Documentation**.
+                </p>
+            </div>
+        </section>
+
+        <!-- ARTICLE LIST SECTION -->
+        <section id="article-list" class="section">
+            <div class="container">
+                
+                <!-- 1. CREATIVE WRITING: Prose and Interactive -->
+                <h3 class="category-heading">Creative Writing: Prose and Narrative Design</h3>
+                <div class="article-stack">
+
+                    <!-- Original Card 2: Narrative Design (Creative/Philosophy) -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Game Design & Philosophy</span>
+                            <span class="date">Sep 15, 2025</span>
                         </div>
-                        <div class="article-tags">
-                            <span>#gamedev</span>
-                            <span>#architecture</span>
-                            <span>#performance</span>
+                        <h3>Narrative Design in Open-World Games: Lessons from the Legends</h3>
+                        <p class="summary">
+                            An analysis of successful open-world games, focusing on how environmental storytelling, emergent narratives, and player agency can create a truly immersive and memorable experience beyond traditional quest lines.
+                        </p>
+                        <ul class="keywords">
+                            <li>Narrative Design</li>
+                            <li>Environmental Storytelling</li>
+                            <li>Open-World Mechanics</li>
+                            <li>Player Agency</li>
+                        </ul>
+                        <a href="creative-writing-template.html" class="read-link">Read Article &rarr;</a>
+                    </div>
+
+                    <!-- Original Card 4: Personal Reflection (Creative/Prose) -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Personal Reflection / Prose</span>
+                            <span class="date">Jul 5, 2025</span>
                         </div>
-                        <a href="article-detail-01.html" class="btn primary">Read Full Article</a>
+                        <h3>My First Game Jam: Chaos, Collaboration, and Code under Pressure</h3>
+                        <p class="summary">
+                            A candid reflection on the experience of participating in a 48-hour game jam, focusing on the challenges of rapid prototyping, scope management, and the invaluable lessons learned about teamwork.
+                        </p>
+                        <ul class="keywords">
+                            <li>Game Jam</li>
+                            <li>Prototyping</li>
+                            <li>Time Management</li>
+                            <li>Teamwork</li>
+                        </ul>
+                        <a href="creative-writing-template.html" class="read-link">Read Article &rarr;</a>
                     </div>
+                    
+                    <!-- NEW Creative Card: Short Story Example -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Short Fiction</span>
+                            <span class="date">May 10, 2025</span>
+                        </div>
+                        <h3>The Quiet Signal from Tau Ceti</h3>
+                        <p class="summary">
+                            A speculative short story exploring themes of first contact, computational linguistics, and the deep time required for interstellar communication. This piece focuses on character-driven prose.
+                        </p>
+                        <ul class="keywords">
+                            <li>Speculative Fiction</li>
+                            <li>Prose</li>
+                            <li>Short Story</li>
+                            <li>Computational Linguistics</li>
+                        </ul>
+                        <a href="creative-writing-template.html" class="read-link">Read Story &rarr;</a>
                     </div>
+
+
+                </div>
+
+                <!-- 2. RESEARCH & ACADEMIC PAPERS -->
+                <h3 class="category-heading">Research & Academic Papers: Technology and Theory</h3>
+                <div class="article-stack">
+                    
+                    <!-- Original Card 1: WebAssembly (Research/Technical) -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Non-Academic Research</span>
+                            <span class="date">Oct 1, 2025</span>
+                        </div>
+                        <h3>The Unseen Power of WebAssembly: Optimizing JavaScript Performance</h3>
+                        <p class="summary">
+                            A deep dive into how WebAssembly (Wasm) works alongside JavaScript to unlock near-native performance for computation-heavy tasks in the browser, covering use cases from game engines to video processing.
+                        </p>
+                        <ul class="keywords">
+                            <li>WebAssembly</li>
+                            <li>Performance Tuning</li>
+                            <li>V8 Engine</li>
+                            <li>Rust/C++ Integration</li>
+                        </ul>
+                        <a href="research-paper-template.html" class="read-link">Read Paper &rarr;</a>
+                    </div>
+
+                    <!-- NEW Research Card: Formal Academic -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Academic Paper</span>
+                            <span class="date">Apr 2, 2025</span>
+                        </div>
+                        <h3>Entropy Minimization in Procedural Generation via Grammatical Evolution</h3>
+                        <p class="summary">
+                            A study on utilizing grammatical evolution algorithms to minimize visual and functional entropy in procedurally generated game environments, submitted for the 2025 IEEE Games Conference.
+                        </p>
+                        <ul class="keywords">
+                            <li>Procedural Generation</li>
+                            <li>Grammatical Evolution</li>
+                            <li>Academic Research</li>
+                            <li>Game AI</li>
+                        </ul>
+                        <a href="research-paper-template.html" class="read-link">View Abstract &rarr;</a>
+                    </div>
+
+                </div>
+                
+                <!-- 3. DOCUMENTATION & TECHNICAL DEEP-DIVES -->
+                <h3 class="category-heading">Documentation & Technical Deep-Dives</h3>
+                <p class="section-description">These documents are here if you want to know about how a system in one of my games works or why a specific design decision was made.</p>
+                <div class="article-stack">
+
+                    <!-- Original Card 3: CSS Grid (Documentation/Tutorial) -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">Practical Tutorial</span>
+                            <span class="date">Aug 20, 2025</span>
+                        </div>
+                        <h3>Getting Started with Modern CSS Grid Layouts: A Comprehensive Guide</h3>
+                        <p class="summary">
+                            A practical, step-by-step tutorial covering the fundamentals of CSS Grid, including complex concepts like `grid-template-areas`, implicit grids, and responsive design with minimal media queries.
+                        </p>
+                        <ul class="keywords">
+                            <li>CSS Grid</li>
+                            <li>Responsive Design</li>
+                            <li>Front-End Development</li>
+                            <li>Layout Systems</li>
+                        </ul>
+                        <a href="doccumentation-template.html" class="read-link">View Guide &rarr;</a>
+                    </div>
+                    
+                    <!-- NEW Documentation Card: System Design -->
+                    <div class="article-card">
+                        <div class="meta-info">
+                            <span class="category">System Documentation</span>
+                            <span class="date">Feb 1, 2025</span>
+                        </div>
+                        <h3>Design Choices for the 'Titan Runner' Chunk Recycling System</h3>
+                        <p class="summary">
+                            Technical documentation detailing the architecture, code flow, and decision-making process for implementing the optimized memory management and chunk recycling system in the Titan Runner project.
+                        </p>
+                        <ul class="keywords">
+                            <li>System Design</li>
+                            <li>Optimization</li>
+                            <li>Memory Management</li>
+                            <li>Game Engine Architecture</li>
+                        </ul>
+                        <a href="doccumentation-template.html" class="read-link">View Documentation &rarr;</a>
+                    </div>
+
+
+                </div>
             </div>
         </section>
     </main>
 
-    </body>
+    <!-- FOOTER/CONTACT FORM SECTION (Copied for consistency) -->
+    <footer id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="tagline">I'm always looking for new opportunities, collaborations, and conversations. Send me a message!</p>
+
+            <form action="https://formspree.io/f/mjkajzdq" method="POST" target="_top" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="_replyto" required> 
+                    <p class="description">This will help me respond to your query via an email.</p>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <p class="description">What would you like to discuss?</p>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+
+            <div class="copyright-info">
+                <p>&copy; 2025 Michael Naidoo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/michael-naidoo" target="_blank">GitHub</a> | 
+                    <a href="#contact" title="Use the form above">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>

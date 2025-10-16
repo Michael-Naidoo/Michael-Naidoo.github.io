@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Detail: The Silent City - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Custom Styles for Creative Writing Detail Page Layout -->
+    <style>
+        .story-detail-header {
+            background-color: var(--color-bg-primary);
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .story-detail-header h1 {
+            font-size: 3em;
+            color: var(--color-text-light); /* Title stands out against dark background */
+            margin-bottom: 5px;
+        }
+
+        .story-metadata {
+            font-size: 0.9em;
+            color: #999;
+            margin-bottom: 40px;
+        }
+
+        .story-metadata .category {
+            font-weight: 600;
+            color: var(--color-accent);
+            text-transform: uppercase;
+        }
+
+        .article-body {
+            /* Wide reading column for comfort */
+            max-width: 800px; 
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .article-body h2 {
+            margin-top: 40px;
+            color: var(--color-accent);
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        /* Styling for a centered image or cover art */
+        .cover-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 2px solid var(--color-accent-dark);
+        }
+
+        /* Styling for Blockquotes/Pull Quotes */
+        .article-body blockquote {
+            border-left: 5px solid var(--color-accent);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--color-accent);
+            font-size: 1.3em;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .story-detail-header {
+                padding: 40px 0 20px 0;
+            }
+            .story-detail-header h1 {
+                font-size: 2em;
+            }
+            .article-body {
+                font-size: 1em;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HEADER/NAVIGATION (Standard, using existing CSS) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">My Portfolio</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="writing.html" class="active">Writing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- STORY HERO SECTION -->
+    <section class="story-detail-header">
+        <div class="container">
+            <h1>The Silent City and the Last Broadcast</h1>
+            <div class="story-metadata">
+                <span class="category">Fiction / Sci-Fi</span> &bull; Published: 2024-11-20
+            </div>
+            <a href="#" class="btn primary">Download</a>
+        </div>
+    </section>
+
+    <!-- ARTICLE BODY SECTION -->
+    <section class="section">
+        <div class="container">
+            
+            <div class="article-body">
+                <!-- Placeholder for Cover Art or Visual -->
+                <img src="https://placehold.co/800x400/111/00BCD4?text=The+Silent+City+Cover+Art" alt="Cover art for The Silent City" class="cover-image">
+
+                <p>The dust tasted of ionized copper and forgotten memory. Elias pulled his breather tighter, the synthetic filter whistling against the heavy silence of what was once known as Sector Seven. Fifty years. Fifty years since the Great Quiet descended, turning the hum of billions into the hiss of static.</p>
+                
+                <p>He was here for a signal—the phantom hum of a transmitter long thought dead. They called it 'The Last Broadcast,' a story whispered in the flickering candlelight of the resettlement zones. A final message, coded and sent before the network collapsed.</p>
+
+                <h2>The Western Spire</h2>
+                <p>The ascent of the Western Spire was an exercise in pure vertical terror. The structural integrity was questionable, and every footstep echoed a hundred stories down into the glass-strewn atrium. Elias ignored the vertigo, focused only on the antique copper antenna rumored to be mounted at the very top. It was the only hardware strong enough to catch a signal this old.</p>
+                
+                <blockquote>
+                    "The dust tasted of ionized copper and forgotten memory."
+                </blockquote>
+
+                <p>Reaching the pinnacle, he found the air thin and the view breathtaking: a vast, empty expanse of metal and silence, illuminated only by the distant, dying light of the setting binary suns. He unlatched his heavy broadcast kit, his fingers clumsy inside the thick gloves. The antenna was there, corroded but intact, humming faintly with residual energy.</p>
+
+                <h2>Deciphering the Message</h2>
+                <p>It took three days to stabilize the feed and another four to crack the encryption. Elias subsisted on dried rations and the faint hope of connection. When the message finally resolved, it wasn't a warning, a plea, or a technical log. It was a single, perfect piece of music—a lullaby, played on an instrument that hadn't been manufactured in centuries. It was the sound of humanity saying goodbye, softly, beautifully, and without regret.</p>
+                
+                <p>Elias sat there, listening, the music washing away the metallic taste of the dust. The city was silent, but it wasn't empty. It was filled with the memory of a song.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Standard, using existing CSS) -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new game concepts, writing opportunities, or freelance work.</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Standard, using existing CSS) -->
+    <footer>
+        <div class="container">
+            <div class="copyright-info">
+                <div class="social-links">
+                    <a href="#">GitHub</a> | 
+                    <a href="#">LinkedIn</a> |
+                    <a href="#">Twitter</a>
+                </div>
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

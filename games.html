@@ -3,36 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games & Projects | Michael Naidoo</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Michael Naidoo | Games & Projects</title>
+    <!-- 
+        Ensure your global styles from css/style.css are linked here
+        to maintain the portfolio's look and feel.
+    -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    <main>
-        <section id="games-grid" class="section">
-            <div class="container">
-                <h1>Games & Projects</h1>
-                <p>A collection of my interactive work, ranging from large-scale game jams to personal prototypes.</p>
-                
-                <div class="project-grid">
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Michael Naidoo</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games & Projects</a></li>
+                    <li><a href="writing.html">Writing & Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-                    <div class="project-card">
-                        <img src="images/game-thumbnail-01.jpg" alt="[Game Name] thumbnail">
-                        <h3>Game Title (e.g., Star Runner)</h3>
-                        <p class="tagline">Platformer game exploring procedural generation.</p>
-                        <ul class="skills-used">
-                            <li>Unity</li>
-                            <li>C#</li>
-                            <li>A.I.</li>
-                        </ul>
-                        <div class="card-links">
-                            <a href="game-detail-01.html" class="btn primary">View Case Study</a>
-                            <a href="https://github.com/your-username/game-repo" target="_blank" class="btn secondary">GitHub Repo</a>
+    <main>
+        <!-- PROJECTS INTRO SECTION -->
+        <section id="projects-intro" class="hero small-hero">
+            <div class="container">
+                <h2>Interactive Experiences & Technical Demos</h2>
+                <p>
+                    A selection of my work spanning game development, procedural generation, and web-based technical challenges.
+                    Each project is a deep dive into specific programming concepts and design aesthetics.
+                </p>
+            </div>
+        </section>
+
+        <!-- PROJECT LIST SECTION -->
+        <section id="project-list" class="section">
+            <div class="container">
+                <!-- 
+                    The project-grid is styled for a responsive, two-column layout 
+                    on larger screens, switching to a single column on mobile.
+                -->
+                <div class="project-grid large-cards">
+
+                    <!-- PROJECT CARD 1: Titan Runner -->
+                    <div class="project-card large">
+                        <img 
+                            src="https://placehold.co/800x450/00BCD4/1D1E22?text=Titan+Runner+%7C+Procedural+3D" 
+                            alt="Screenshot of Titan Runner game environment"
+                        >
+                        <div class="card-content">
+                            <h3>Titan Runner: Endless 3D World</h3>
+                            <p class="tagline">An infinite runner built from the ground up to explore procedural level generation and optimization in a mobile-first 3D environment.</p>
+                            
+                            <p class="description">
+                                **Challenge:** Implement smooth, performant, and truly endless level generation using Unity's Job System for multithreading, ensuring high frame rates even as geometry is recycled and obstacles are placed dynamically.
+                            </p>
+                            
+                            <ul class="skills-used">
+                                <li>Unity Engine</li>
+                                <li>C# / DOTS</li>
+                                <li>3D Modeling (Blender)</li>
+                                <li>Mobile Optimization</li>
+                            </ul>
+                            
+                            <a href="game-details-template.html" class="btn primary">View Code (GitHub)</a>
                         </div>
                     </div>
+                    
+                    <!-- PROJECT CARD 2: Grid Defender -->
+                    <div class="project-card large">
+                        <img 
+                            src="https://placehold.co/800x450/FFB347/1D1E22?text=Grid+Defender+%7C+Tactical+2D" 
+                            alt="Screenshot of a tactical grid-based tower defense game"
+                        >
+                        <div class="card-content">
+                            <h3>Grid Defender: Tactical Tower Defense</h3>
+                            <p class="tagline">A 2D strategy game focusing on complex pathfinding and enemy intelligence on a dynamic grid map, built using the Phaser framework.</p>
+
+                            <p class="description">
+                                **Challenge:** Develop a custom A* pathfinding implementation that recalculates optimal routes in real-time as towers are placed or obstacles change. Focus was placed on creating distinct enemy behaviors (flee, target priority, swarm).
+                            </p>
+                            
+                            <ul class="skills-used">
+                                <li>Phaser JS</li>
+                                <li>JavaScript (ES6)</li>
+                                <li>A* Pathfinding</li>
+                                <li>Game Physics</li>
+                            </ul>
+                            
+                            <a href="game-details-template.html" class="btn primary">Play Demo</a>
+                        </div>
                     </div>
+
+                    <!-- PROJECT CARD 3: AI Sandbox: Pathfinding -->
+                    <div class="project-card large">
+                        <img 
+                            src="https://placehold.co/800x450/33AACC/1D1E22?text=AI+Sandbox+%7C+Visualization" 
+                            alt="Screenshot of an interactive algorithm visualization tool"
+                        >
+                        <div class="card-content">
+                            <h3>AI Sandbox: Algorithm Visualization</h3>
+                            <p class="tagline">An interactive React application to visualize complex algorithms (Dijkstra's, A*) step-by-step, providing clear insights into how they prioritize and process data.</p>
+
+                            <p class="description">
+                                **Challenge:** Ensure the front-end rendering (using canvas or SVG) could smoothly handle real-time updates for thousands of nodes without performance loss, enabling users to interactively modify the grid and watch the changes.
+                            </p>
+                            
+                            <ul class="skills-used">
+                                <li>React / TypeScript</li>
+                                <li>Functional Programming</li>
+                                <li>D3.js (for rendering)</li>
+                                <li>State Management (Zustand)</li>
+                            </ul>
+                            
+                            <a href="game-details-template.html" class="btn primary">Explore Live Demo</a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT CARD 4: Retro Arcade: Space Blaster -->
+                    <div class="project-card large">
+                        <img 
+                            src="https://placehold.co/800x450/FFD700/1D1E22?text=Space+Blaster+%7C+HTML+Canvas" 
+                            alt="Screenshot of a 2D space shooter with pixel art"
+                        >
+                        <div class="card-content">
+                            <h3>Retro Arcade: Space Blaster</h3>
+                            <p class="tagline">A classic, top-down space shooter implemented entirely using vanilla JavaScript and the HTML5 Canvas API to learn low-level game loop architecture.</p>
+
+                            <p class="description">
+                                **Challenge:** Manage sprite sheet animations, collision detection, and score tracking within a single game loop structure. This was a valuable exercise in writing high-performance, dependency-free JavaScript code.
+                            </p>
+                            
+                            <ul class="skills-used">
+                                <li>HTML5 Canvas</li>
+                                <li>Vanilla JavaScript</li>
+                                <li>Sprite Animation</li>
+                                <li>DOM Manipulation</li>
+                            </ul>
+                            
+                            <a href="game-details-template.html" class="btn primary">Play Game</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
     </main>
 
-    </body>
+    <!-- FOOTER/CONTACT FORM SECTION -->
+    <footer id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="tagline">I'm always looking for new opportunities, collaborations, and conversations. Send me a message!</p>
+
+            <form action="https://formspree.io/f/mjkajzdq" method="POST" target="_top" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="_replyto" required> 
+                    <p class="description">This will help me respond to your query via an email.</p>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <p class="description">What would you like to discuss?</p>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+
+            <div class="copyright-info">
+                <p>&copy; 2025 Michael Naidoo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/michael-naidoo" target="_blank">GitHub</a> | 
+                    <a href="#contact" title="Use the form above">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>

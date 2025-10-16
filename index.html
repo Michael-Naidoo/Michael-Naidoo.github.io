@@ -58,24 +58,20 @@
                 -->
                 <div class="project-grid">
                     
-                    <!-- GAME CAROUSEL CARD START -->
+                    <!-- GAME CAROUSEL CARD START (Instance 1) -->
                     <div class="project-card">
                         
-                        <!-- NEW CAROUSEL STRUCTURE -->
-                        <!-- 
-                            The centering rules (max-width and margin: auto) for 
-                            carousel-container are defined in css/style.css 
-                        -->
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
                         <div class="carousel-container">
-                            <div id="gameCarousel" class="image-reel">
+                            <div class="image-reel game-carousel">
                                 <!-- Replace these with your actual game screenshots (400x200 resolution recommended) -->
                                 <img src="https://placehold.co/400x200/00BCD4/1D1E22?text=Titan+Runner+Scene+1" alt="Game Screenshot 1">
                                 <img src="https://placehold.co/400x200/FF5733/1D1E22?text=Titan+Runner+Scene+2" alt="Game Screenshot 2">
                                 <img src="https://placehold.co/400x200/33FF57/1D1E22?text=Titan+Runner+Scene+3" alt="Game Screenshot 3">
                                 <img src="https://placehold.co/400x200/5733FF/1D1E22?text=Titan+Runner+Scene+4" alt="Game Screenshot 4">
                             </div>
-                            <button id="prevBtn" class="carousel-btn left-btn">&#10094;</button>
-                            <button id="nextBtn" class="carousel-btn right-btn">&#10095;</button>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
                         </div>
                         <!-- END NEW CAROUSEL STRUCTURE -->
                         
@@ -89,37 +85,99 @@
                         <a href="games.html" class="btn primary">Play Now</a>
                     </div>
                     
-					<!-- GAME CAROUSEL CARD START -->
+					<!-- GAME CAROUSEL CARD START (Instance 2) -->
                     <div class="project-card">
-                        
-                        <!-- NEW CAROUSEL STRUCTURE -->
-                        <!-- 
-                            The centering rules (max-width and margin: auto) for 
-                            carousel-container are defined in css/style.css 
-                        -->
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
                         <div class="carousel-container">
-                            <div id="gameCarousel" class="image-reel">
-                                <!-- Replace these with your actual game screenshots (400x200 resolution recommended) -->
-                                <img src="https://placehold.co/400x200/00BCD4/1D1E22?text=Titan+Runner+Scene+1" alt="Game Screenshot 1">
-                                <img src="https://placehold.co/400x200/FF5733/1D1E22?text=Titan+Runner+Scene+2" alt="Game Screenshot 2">
-                                <img src="https://placehold.co/400x200/33FF57/1D1E22?text=Titan+Runner+Scene+3" alt="Game Screenshot 3">
-                                <img src="https://placehold.co/400x200/5733FF/1D1E22?text=Titan+Runner+Scene+4" alt="Game Screenshot 4">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/FFB347/1D1E22?text=Project+B+-+Menu" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/47FFB3/1D1E22?text=Project+B+-+Level+1" alt="Game Screenshot 2">
+                                <img src="https://placehold.co/400x200/B347FF/1D1E22?text=Project+B+-+Boss+Fight" alt="Game Screenshot 3">
                             </div>
-                            <button id="prevBtn" class="carousel-btn left-btn">&#10094;</button>
-                            <button id="nextBtn" class="carousel-btn right-btn">&#10095;</button>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
                         </div>
                         <!-- END NEW CAROUSEL STRUCTURE -->
                         
-                        <h3>Latest Game: Titan Runner</h3>
-                        <p class="tagline">A low-poly 3D runner built in Unity.</p>
+                        <h3>Project B: Grid Defender</h3>
+                        <p class="tagline">A tactical tower defense game in Phaser.</p>
                         <ul class="skills-used">
-                            <li>Unity</li>
-                            <li>C#</li>
-                            <li>3D Modeling</li>
+                            <li>Phaser JS</li>
+                            <li>JavaScript</li>
+                            <li>Algorithm Design</li>
+                        </ul>
+                        <a href="games.html" class="btn primary">View Details</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 3) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/33AACC/1D1E22?text=Simulation+Setup" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/CC33AA/1D1E22?text=Simulation+Running" alt="Game Screenshot 2">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>AI Sandbox: Pathfinding</h3>
+                        <p class="tagline">Visualizing A* and Dijkstra's algorithm.</p>
+                        <ul class="skills-used">
+                            <li>React</li>
+                            <li>TypeScript</li>
+                            <li>Visualization</li>
+                        </ul>
+                        <a href="games.html" class="btn primary">Explore Demo</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 4) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/FFD700/1D1E22?text=Old+School+Pixel+Art" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/CD5C5C/1D1E22?text=Game+Over+Screen" alt="Game Screenshot 2">
+                                <img src="https://placehold.co/400x200/87CEFA/1D1E22?text=In-Game+Action" alt="Game Screenshot 3">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Retro Arcade: Space Blaster</h3>
+                        <p class="tagline">A simple JS canvas shooter game.</p>
+                        <ul class="skills-used">
+                            <li>HTML5 Canvas</li>
+                            <li>JavaScript</li>
+                            <li>Pixel Art</li>
                         </ul>
                         <a href="games.html" class="btn primary">Play Now</a>
                     </div>
-					
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 5) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/808080/1D1E22?text=Card+Game+Interface" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/C0C0C0/1D1E22?text=Deck+Building" alt="Game Screenshot 2">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Deck Builder Prototype</h3>
+                        <p class="tagline">A quick prototype for a collectible card game.</p>
+                        <ul class="skills-used">
+                            <li>Godot Engine</li>
+                            <li>GDScript</li>
+                        </ul>
+                        <a href="games.html" class="btn primary">Check Code</a>
+                    </div>
+                    
                     <!-- ARTICLE STATIC BANNER CARD START -->
                     <div class="project-card">
                         <!-- Static cover image for the article (400x200 resolution recommended) -->
@@ -185,58 +243,76 @@
     <!-- JAVASCRIPT FOR CAROUSEL FUNCTIONALITY -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.getElementById('gameCarousel');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            
-            // Get all images (slides) inside the reel
-            const slides = carousel.querySelectorAll('img');
-            const totalImages = slides.length;
-            
-            let currentImageIndex = 0;
-            let autoScrollInterval;
-            
-            // Function to move the reel by setting the CSS transform property
-            const updateCarousel = () => {
-                const translateX = -currentImageIndex * 100;
-                carousel.style.transform = `translateX(${translateX}%)`;
-            };
-            
-            // Manual Navigation: Advance to the next image and reset the timer
-            const showNextImage = () => {
-                currentImageIndex = (currentImageIndex + 1) % totalImages;
-                updateCarousel();
-                resetInterval();
-            };
+            // Find all carousel containers on the page
+            const carouselContainers = document.querySelectorAll('.carousel-container');
 
-            // Manual Navigation: Go to the previous image and reset the timer
-            const showPrevImage = () => {
-                // The (+ totalImages) ensures the index wraps correctly from 0 to the last image
-                currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
-                updateCarousel();
-                resetInterval();
-            };
+            // Iterate over each container and set up its independent carousel logic
+            carouselContainers.forEach(container => {
+                // Find the elements specific to this container
+                const carousel = container.querySelector('.game-carousel');
+                const prevBtn = container.querySelector('.carousel-prev-btn');
+                const nextBtn = container.querySelector('.carousel-next-btn');
 
-            // Event listeners for the manual buttons
-            nextBtn.addEventListener('click', showNextImage);
-            prevBtn.addEventListener('click', showPrevImage);
-            
-            // Automatic Scrolling: Starts the timer
-            const startInterval = () => {
-                autoScrollInterval = setInterval(() => {
+                if (!carousel || !prevBtn || !nextBtn) {
+                    console.error("Missing carousel elements in a container.");
+                    return; // Skip if elements aren't found
+                }
+                
+                // Get all images (slides) inside the reel
+                const slides = carousel.querySelectorAll('img');
+                const totalImages = slides.length;
+                
+                let currentImageIndex = 0;
+                let autoScrollInterval;
+                
+                // Function to move the reel by setting the CSS transform property
+                const updateCarousel = () => {
+                    // Only run if there is more than one image
+                    if (totalImages > 1) {
+                         const translateX = -currentImageIndex * 100;
+                         carousel.style.transform = `translateX(${translateX}%)`;
+                    }
+                };
+                
+                // Manual Navigation: Advance to the next image and reset the timer
+                const showNextImage = () => {
+                    if (totalImages <= 1) return;
                     currentImageIndex = (currentImageIndex + 1) % totalImages;
                     updateCarousel();
-                }, 5000); // 5000 milliseconds = 5 seconds
-            };
+                    resetInterval();
+                };
 
-            // Resets the timer so user interaction doesn't immediately cause a slide
-            const resetInterval = () => {
-                clearInterval(autoScrollInterval);
+                // Manual Navigation: Go to the previous image and reset the timer
+                const showPrevImage = () => {
+                    if (totalImages <= 1) return;
+                    // The (+ totalImages) ensures the index wraps correctly from 0 to the last image
+                    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                    updateCarousel();
+                    resetInterval();
+                };
+
+                // Event listeners for the manual buttons
+                nextBtn.addEventListener('click', showNextImage);
+                prevBtn.addEventListener('click', showPrevImage);
+                
+                // Automatic Scrolling: Starts the timer
+                const startInterval = () => {
+                    if (totalImages <= 1) return; // Don't start interval if only one image exists
+                    autoScrollInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % totalImages;
+                        updateCarousel();
+                    }, 5000); // 5000 milliseconds = 5 seconds
+                };
+
+                // Resets the timer so user interaction doesn't immediately cause a slide
+                const resetInterval = () => {
+                    clearInterval(autoScrollInterval);
+                    startInterval();
+                };
+
+                // Start the automatic scrolling for this specific carousel
                 startInterval();
-            };
-
-            // Start the automatic scrolling when the page finishes loading
-            startInterval();
+            });
         });
     </script>
 </body>
