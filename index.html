@@ -2,10 +2,211 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Michael Naidoo's Portfolio (Coming Soon!)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Naidoo | Portfolio</title>
+    <!-- 
+        This is the critical link that pulls in all the global styles 
+        from your css/style.css file, including the new centered carousel styles!
+    -->
+    <link rel="stylesheet" href="css/style.css"> 
+
+    <!-- 
+        CAROUSEL SPECIFIC STYLES ARE NOW IN css/style.css.
+        The previous <style> block has been removed for cleaner code.
+    -->
 </head>
 <body>
-    <h1>Hello! My Portfolio is Under Construction.</h1>
-    <p>This is a test of the GitHub Pages deployment.</p>
+    <!-- 
+        HEADER & NAVIGATION: Styled by header, nav, .logo, and ul/li/a rules 
+        from css/style.css.
+    -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Michael Naidoo</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games & Projects</a></li>
+                    <li><a href="writing.html">Writing & Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2>Game Developer & Writer</h2>
+                <p>
+                    Welcome to my portfolio! I specialize in crafting engaging interactive experiences 
+                    and insightful technical narratives, driven by a passion for clean code and compelling stories.
+                </p>
+                <a href="games.html" class="btn primary">View My Work</a>
+            </div>
+        </section>
+        
+        <!-- FEATURED WORK SECTION -->
+        <section id="featured-work" class="section">
+            <div class="container">
+                <h3>Featured Projects</h3>
+                
+                <!-- 
+                    .project-grid and .project-card are heavily styled by 
+                    css/style.css for clear sectioning. 
+                -->
+                <div class="project-grid">
+                    
+                    <!-- GAME CAROUSEL CARD START -->
+                    <div class="project-card">
+                        
+                        <!-- NEW CAROUSEL STRUCTURE -->
+                        <!-- 
+                            The centering rules (max-width and margin: auto) for 
+                            carousel-container are defined in css/style.css 
+                        -->
+                        <div class="carousel-container">
+                            <div id="gameCarousel" class="image-reel">
+                                <!-- Replace these with your actual game screenshots (400x200 resolution recommended) -->
+                                <img src="https://placehold.co/400x200/00BCD4/1D1E22?text=Titan+Runner+Scene+1" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/FF5733/1D1E22?text=Titan+Runner+Scene+2" alt="Game Screenshot 2">
+                                <img src="https://placehold.co/400x200/33FF57/1D1E22?text=Titan+Runner+Scene+3" alt="Game Screenshot 3">
+                                <img src="https://placehold.co/400x200/5733FF/1D1E22?text=Titan+Runner+Scene+4" alt="Game Screenshot 4">
+                            </div>
+                            <button id="prevBtn" class="carousel-btn left-btn">&#10094;</button>
+                            <button id="nextBtn" class="carousel-btn right-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Latest Game: Titan Runner</h3>
+                        <p class="tagline">A low-poly 3D runner built in Unity.</p>
+                        <ul class="skills-used">
+                            <li>Unity</li>
+                            <li>C#</li>
+                            <li>3D Modeling</li>
+                        </ul>
+                        <a href="games.html" class="btn primary">Play Now</a>
+                    </div>
+                    
+                    <!-- ARTICLE STATIC BANNER CARD START -->
+                    <div class="project-card">
+                        <!-- Static cover image for the article (400x200 resolution recommended) -->
+                        <img src="https://placehold.co/400x200/00BCD4/FFFFFF?text=Article+Cover+Image" alt="Featured Article Thumbnail">
+                        
+                        <h3>Writing: The Future of Procedural Content</h3>
+                        <p class="tagline">An essay on non-deterministic world generation.</p>
+                        <ul class="skills-used">
+                            <li>Technical Writing</li>
+                            <li>Gamedev Theory</li>
+                        </ul>
+                        <a href="writing.html" class="btn secondary">Read Article</a>
+                    </div>
+                    <!-- END ARTICLE CARD -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER/CONTACT FORM SECTION -->
+    <footer id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="tagline">I'm always looking for new opportunities, collaborations, and conversations. Send me a message!</p>
+
+            <!-- 
+                Form uses the Formspree endpoint (action="https://formspree.io/f/mjkajzdq") 
+                and is styled by css/style.css.
+            -->
+            <form action="https://formspree.io/f/mjkajzdq" method="POST" target="_top" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <!-- Use _replyto for Formspree to set the Reply-To header -->
+                    <input type="email" id="email" name="_replyto" required> 
+                    <p class="description">This will help me respond to your query via an email.</p>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <p class="description">What would you like to discuss?</p>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+
+            <div class="copyright-info">
+                <p>&copy; 2025 Michael Naidoo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/michael-naidoo" target="_blank">GitHub</a> | 
+                    <a href="#contact" title="Use the form above">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CAROUSEL FUNCTIONALITY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('gameCarousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            // Get all images (slides) inside the reel
+            const slides = carousel.querySelectorAll('img');
+            const totalImages = slides.length;
+            
+            let currentImageIndex = 0;
+            let autoScrollInterval;
+            
+            // Function to move the reel by setting the CSS transform property
+            const updateCarousel = () => {
+                const translateX = -currentImageIndex * 100;
+                carousel.style.transform = `translateX(${translateX}%)`;
+            };
+            
+            // Manual Navigation: Advance to the next image and reset the timer
+            const showNextImage = () => {
+                currentImageIndex = (currentImageIndex + 1) % totalImages;
+                updateCarousel();
+                resetInterval();
+            };
+
+            // Manual Navigation: Go to the previous image and reset the timer
+            const showPrevImage = () => {
+                // The (+ totalImages) ensures the index wraps correctly from 0 to the last image
+                currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                updateCarousel();
+                resetInterval();
+            };
+
+            // Event listeners for the manual buttons
+            nextBtn.addEventListener('click', showNextImage);
+            prevBtn.addEventListener('click', showPrevImage);
+            
+            // Automatic Scrolling: Starts the timer
+            const startInterval = () => {
+                autoScrollInterval = setInterval(() => {
+                    currentImageIndex = (currentImageIndex + 1) % totalImages;
+                    updateCarousel();
+                }, 5000); // 5000 milliseconds = 5 seconds
+            };
+
+            // Resets the timer so user interaction doesn't immediately cause a slide
+            const resetInterval = () => {
+                clearInterval(autoScrollInterval);
+                startInterval();
+            };
+
+            // Start the automatic scrolling when the page finishes loading
+            startInterval();
+        });
+    </script>
 </body>
 </html>
