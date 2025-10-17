@@ -72,6 +72,12 @@ header .logo {
     color: var(--color-accent);
 }
 
+header .logo img {
+    height: 35px; /* Sets the logo size */
+    width: auto;
+    vertical-align: middle; /* Ensures it lines up correctly */
+}
+
 header nav ul {
     list-style: none;
     margin: 0;
