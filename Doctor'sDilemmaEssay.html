@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Detail: Generative Networks - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        :root {
+            --color-bg-primary: #121212; /* Dark background */
+            --color-accent: #00bcd4; /* Cyan/Teal accent */
+            --color-accent-dark: #008ba3;
+            --color-text-light: #e0e0e0;
+            --color-input-bg: #1e1e1e;
+        }
+        
+        body {
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--color-accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Standard Section Styling (assumed from 'css/style.css') */
+        .section {
+            padding: 60px 0;
+        }
+        
+        /* Navigation (Assuming dark/cyberpunk styling) */
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--color-accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--color-accent);
+        }
+
+        /* Buttons (Assuming a consistent style) */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn.primary {
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            border: none;
+        }
+
+        .btn.primary:hover {
+            background-color: #00e5ff;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: #0d0d0d;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .copyright-info {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .social-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* Custom Styles for Academic Detail Page Layout */
+        .paper-detail-header {
+            background-color: var(--color-bg-primary);
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .paper-detail-header h1 {
+            font-size: 3.5em;
+            color: var(--color-accent);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+            margin-bottom: 10px;
+        }
+
+        .paper-detail-header .authors {
+            font-size: 1em;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .paper-detail-header p {
+            font-size: 1.2em;
+            color: var(--color-text-light);
+            max-width: 800px;
+            margin: 10px auto 30px auto;
+            font-style: italic;
+        }
+
+        .abstract-container {
+            margin: 40px auto;
+            max-width: 900px;
+            padding: 30px;
+            background-color: var(--color-input-bg);
+            border-radius: 10px;
+            border-left: 5px solid var(--color-accent);
+        }
+        
+        /* Feature/Description Layout */
+        .feature-layout {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: var(--color-input-bg); /* Darker background */
+            border-radius: 8px;
+            height: fit-content;
+            border-left: 5px solid var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: var(--color-accent);
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .spec-list li {
+            margin-bottom: 10px;
+            color: var(--color-text-light);
+            font-size: 0.95em;
+        }
+
+        .spec-list span {
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-right: 5px;
+        }
+
+        /* Methodology grid is removed/repurposed for essay flow */
+        .methodology-grid {
+             display: block; /* Change to block to contain the flow */
+             margin-top: 30px;
+        }
+
+        .method-item {
+            background-color: #2a2c30;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            border: 1px solid #333;
+            margin-bottom: 20px; /* Added spacing */
+        }
+
+        .method-item:hover {
+            transform: none; /* Removed hover effect for academic content */
+        }
+
+        .method-item h4 {
+            color: var(--color-accent-dark);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        /* References section styling */
+        .references-section {
+            margin: 60px auto;
+            max-width: 900px;
+            padding: 30px;
+            background-color: var(--color-input-bg);
+            border-radius: 10px;
+            border-top: 5px solid var(--color-accent);
+        }
+
+        .references-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references-section li {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            border-bottom: 1px dotted #333;
+            padding-bottom: 10px;
+        }
+
+
+        /* Responsive Adjustments for Detail Page */
+        @media (max-width: 768px) {
+            .paper-detail-header {
+                padding: 40px 0 20px 0;
+            }
+            .paper-detail-header h1 {
+                font-size: 2.2em;
+            }
+            .feature-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="images/logo.svg" alt="Michael Naidoo Logo">Micahel Naidoo</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="writing.html" class="active">Writing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="paper-detail-header">
+        <div class="container">
+            <h1>Theoretical and Practical Development of 'Doctor's Dilemma'</h1>
+            <p class="authors">By: Michael Naidoo</p>
+            <p>A critical examination of how academic theory and inspirational works inform the design of an interactive medical drama built with Twine.</p>
+            <a href="writing/d-dilemmaEssay.pdf" class="btn primary">Download Full PDF</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container abstract-container">
+            <h2>Abstract</h2>
+            <p>In an increasingly interactive digital world, the ability of narratives to compel, challenge, and ultimately influence human behaviour has become a critical area of study. This essay will look at the theoretical and practical development of the story 'Doctor's Dilemma', an interactive medical drama built with Twine. The game lets the player become a doctor who goes around telling patients about the surgeries they need and helps them decide which surgery would be the best for them, this all culminates in a final decision in which the life of your only long term patient is at risk at the same time as the life of a young child, forcing the player to choose who dies. This essay will explore how theory informed the design of the piece, critically examining the integration of feedback and the evolution of my understanding of interactive writing. To achieve this, the essay will first detail the theoretical framework underpinning 'Doctor's Dilemma,' analysing key concepts from Grindle (2014), Chen (2007), Roberts et al. (2009), Burke (2019), Wardrip-Fruin et al. (2009), and Hiwiller (2016). Following this, it will explore six inspirational works that shaped specific design decisions. The essay will then analyse how iterative feedback from previous course tasks was integrated into the project's development. Finally, it will conclude with a self-assessment reflecting on the author's personal and academic growth throughout this course and the exam process.</p>
+        </div>
+    </section>
+
+    <section class="section" id="details">
+        <div class="container">
+            <h2>Theoretical Framework & Design Analysis</h2>
+            
+            <div class="feature-layout">
+                
+                <div class="main-content">
+                    
+                    <h3>Key Theoretical Readings</h3>
+                    
+                    <div class="methodology-grid">
+                        <div class="method-item">
+                            <h4>Grindle (2014) – Desire and Behaviour</h4>
+                            <p>In Chapter 1 of their paper, Grindle (2014) talks about Plato’s method for changing behaviour based on desire, stating that people who are ruled by their appetitive desires will take representations at face value. They then state that **Education, Socialism and Storytelling** will allow them to see these representations as models. Lastly, they state that continual education results in people adhering to these ‘rational desires’. This means that we can use education and storytelling to alter a person’s desires and ultimately their behaviour. In interactive writing, this can be used to coerce a player into a specific situation or to try to force an opinion or reaction. In ‘Doctor’s Dilemma’, this tactic will be leveraged to create a desire to save the main patient. The player will begin by helping patients choose the most appropriate surgery, which will develop their mindset into one of putting the needs of their patients first. They will then intermittently be asked to choose what surgery the main patient should undergo next; this process will loop, acting as a continual teaching moment for what is expected of the player. When the player reaches the end of the game, they will be asked to choose between their unstable patient and a new, more stable patient. They should by now have a deep desire to work in the best interest of their patient, which will contradict the more logical choice of favouring the stable patient, creating tension within this final scene.</p>
+                        </div>
+
+                        <div class="method-item">
+                            <h4>Chen (2007) – Flow State in Interaction</h4>
+                            <p>According to Chen (2007), **flow** is the state of being completely focused on an activity. They state that this is generally accompanied by a high sense of enjoyment and fulfilment. They go on to say that during a flow experience, also known as being in the zone, individuals lose track of time and devote focus towards their performance. According to Chen (2007), a person will get into the zone when one or more specific parameters are met; a few of these are **clear goals, immediate feedback, and a sense of control**. In an interactive narrative, these 3 parameters are the easiest to control. You can set goals for your players early on in the narrative, have immediate consequences show when they make choices, and allow them some agency over the story to allow them a sense of control. In ‘Doctor’s Dilemma’, I set goals for my player early on by telling them that their role in this world is to recommend surgeries to patients within the first narrative page. I then show immediate consequences by having some form of change or addition to the text for every click, and show the player the outcomes for their recommendations as soon as they give them. Lastly, I allow the players minor narrative control by tailoring the story around their choices, although the main story keeps moving forward, they can have control over the stories of the side characters, which gives them a sense of control.</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Roberts et al. (2009) – Subtle Guidance and Consistency</h4>
+                            <p>In their paper, Roberts et al. (2009) look at how authors of interactive narratives can subtly guide players towards behaviour and decisions that the author desires without taking away from their sense of agency. This is accomplished through many tactics including using; the player’s tendency to return favours, players looking to other characters to determine their actions, a players higher likelihood to follow requests from characters they like, a player’s sense of duty to a authoritative figure, a player’s desire for an item that grows inversely proportional to that items abundance, and most important to ‘Doctor’s Dilemma’, a player’s desire to **remain consistent with their past behaviours and actions**. In ‘Doctor’s Dilemma’, this last point was used to create tension around the final choice. Throughout the game, the player always gives the patient good advice or books beneficial surgeries for the patient, which causes the player to identify as a good doctor who prioritises their patients. When they are forced to choose between patients, this will create internal conflict in the player, forcing them to confront their desire to be the good doctor. This will create significant emotional depth in the final act of the story.</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Wardrip-Fruin et al. (2009) – Redefining Agency</h4>
+                            <p>In their paper, Wardrip-Fruin et al. (2009) propose the idea that **agency** occurs “when the actions players desire are among those they can take”. They move the definition away from being ‘free will’ and towards the interaction between the player and the system. In Interactive writing, this informs the author on how their interaction should be structured, directing it away from simple choices that have no bearing on the player experience, and towards informed decisions that allow the player to progress to a certain outcome, whether that be racing towards the end of the story, or going on a tangent, every decision the player makes should be informed and have direction. In ‘Doctor’s Dilemma’, every choice is preceded by a section of the story that explains each choice so all choices are informed; additionally, each choice leads to a quantifiable end. Another way to use this reading and the more prevalent one is to realise that while agency is defined as an occurrence when desired choices are present, the **desire itself is being manipulated by the author** as seen in the above paragraphs, this allows ‘Doctor’s Dilemma’ to steer desire to ensure that the choices that player wants are present, allowing for a strong sense of agency.</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Burke (2019) – Player as Co-author</h4>
+                            <p>In their paper, Burke (2019) states that players in interactive narratives, by virtue of the player’s ability to interact with the system, are able to affect the plot and **“co-author” the story** with the developer. This paper goes on to mention that the developer should design a system that the player can use to construct a story. This is important for interactive writing as it informs developers on how they should design their systems in a manner that allows the player to string their choices together to create a unique narrative that feels coherent. This is taken into account with ‘Doctor’s Dilemma’ to ensure that every possible combination of choices results in a **coherent story**. To do this, the narrative was made **modular and in a looping fashion**, allowing the player to move through the story, ending and starting each new scene naturally, in the doctor’s office. This allows the player to feel that they have written their own story through their choices, without feeling that there was a break in the story, allowing them to emotionally invest in it on a deeper level than they would in a traditional story.</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>Hiwiler (2016) – Meaningful Decisions</h4>
+                            <p>Hiwiler (2016), in their paper, gives us a framework for identifying **less interesting choices** and **meaningful decisions**. They state that less interesting choices can be categorised by: their lack of information, which leads to an uninformed choice, obvious choices that make the player’s ability to choose redundant, and meaningless choices that have no effect on the story. They then state that **meaningful decisions** contain pros and cons that the player has to weigh, and have some kind of risk-reward trade-off. In an Interactive narrative, this is important for making your player feel like a valuable piece of the story. In ‘Doctor’s Dilemma’, I make sure to avoid less interesting choices by making my choices informed decisions by; telling the player what would happen if they made each decision, making the choices more equal to blur the line between which one the player should choose, ensuring that all choices affect the narrative, and lastly I give each choice a few pros and cons for the player to weigh before making their decision on which surgery to recommend.</p>
+                        </div>
+                    </div>
+                    
+                    <hr>
+
+                    <h3>Inspirational Works and Design Decisions</h3>
+                    
+                    <div class="methodology-grid">
+                        <div class="method-item">
+                            <h4>There’s This Girl (Angela He, 2018) – Active Participation</h4>
+                            <p>There’s This Girl by Angela He (2018) is a mobile interactive fiction. The inspiring aspect is the story's ability to retain the player’s attention and build an emotional connection to the characters by being an **‘active participant’** in their lives. By acting as the character and participating in the dates, the player becomes the character, and this causes them to experience the character’s emotions instead of reading or seeing them. In ‘Doctor’s Dilemma’, the narrative will similarly be linear, with the interaction serving the purpose of building an emotional bond between the player and the protagonist. By talking to patients and recommending surgeries, the player embodies the doctor, making the bond between the doctor and the main patient more real, giving the final choice more emotional gravity.</p>
+                        </div>
+
+                        <div class="method-item">
+                            <h4>Papers Please (Lucas Pope, 2013) – Consistent Character Exposure</h4>
+                            <p>One interesting part of Papers Please by Lucas Pope (2013) is the character Jorji Costava. My theory is that this favouritism is a result of the players being in contact with Jorji far more often than any other character. This shows how **consistent appearances** from a character lead to the reader or player forming an emotional connection to the character. Within ‘Doctor's Dilemma’, I use this idea by having the player work on the main patient’s case daily. This, in theory, should result in the player forming an emotional bond with the main patient.</p>
+                        </div>
+                        
+                        <div class="method-item">
+                            <h4>This War of Mine (11 Bit Studios, 2014) – Moral Scarcity and Tension</h4>
+                            <p>Throughout This War of Mine (2014), the player is faced with moral tests in the form of low amounts of medicine or food, or the decision to steal food from the vulnerable. This forces the player to make difficult decisions that ultimately boil down to who do you want to live, and who do you want to die. In ‘Doctor’s Dilemma’, I create the main moment of tension by introducing a life-threatening situation to the main patient, and I then introduce a child with an equally life-threatening situation. Using these 2 patients I create a situation where the hospital **lacks resources** in the form of blood. Because of these issues arising at the same time, I force the player to make the decision of who gets to live, creating an intense sense of tension.</p>
+                        </div>
+
+                        <div class="method-item">
+                            <h4>Life Is Strange (Dontnod Entertainment, 2015) – Building Responsibility</h4>
+                            <p>The main inspiration from Life Is Strange (2015) was its ability to develop deep emotional connections with the characters, which then gives the player smaller choices that build up to major consequences. It does this by ensuring that player choices have a **visible effect on the lives of characters**, creating a sense of responsibility over the results. In interactive narratives this can be used to build a connection to a character, looking specifically at ‘Doctor’s Dilemma’, the use of multiple surgeries that the player needs to help the patient choose creates a scenario in which the player makes smaller choices that lead to either the patient's recovery or their death resulting in a deep connection and **sense of responsibility**, making the final decision that much harder.</p>
+                        </div>
+
+                        <div class="method-item">
+                            <h4>The Trolley Problem (Duignan, 2025) – Ethical Dilemma as Conflict</h4>
+                            <p>The trolley problem defined by Duignan (2025) is a well-known philosophical problem in which a train is heading for a track on which multiple people are tied, you have the ability to change the train track, but you can only change it to a track on which 1 person is tied. This causes the moral conflict of choosing between many people dying, but it not being your fault, or one person dying at your hand. In ‘Doctor’s Dilemma’, I have used this idea as my main conflict. I give the player a choice between saving the life of a child and leaving their patient to die, or ignoring the child for a chance to save their patient. In this case, the time, effort and emotional investment you have in the main patient act as a **ballast to muddy the water** and make the seemingly obvious choice less so.</p>
+                        </div>
+
+                        <div class="method-item">
+                            <h4>House M.D. (David Shore, 2004) – Narrative Pacing and Side Quests</h4>
+                            <p>In the TV series House M.D. (2004), House is given the task of seeing patients in the clinic section of the hospital. I found that as a viewer, I got a pleasant break from the main storyline and narrative tension during this segment while still being interested in the smaller stories that it gave me. In Interactive narratives, this can be a good tool to ensure that players do not feel overwhelmed or do not get bored with the main story; it would act like **side quests**. In ‘Doctor’s Dilemma’, I give the player multiple cases to work on while only allowing them to solve one problem for the main patient each day. This gives them a break from the main tension while allowing them to properly process it before moving on.</p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <h3>Integration of Iterative Feedback</h3>
+                    <p>In Task 1, the feedback noted that although dialogue was well received, expansion on the story would have been appreciated, and the overuse of direct quotes was a concern. To address this, I aimed to create a full-bodied, complete story for my creative part while focusing on using paraphrased sections of texts where I wanted to use quotes, and wherever possible, I favoured explaining concepts as I understood them to relate to my project.</p>
+                    <p>In **Task 2, the feedback was that although the writing was good, the interaction felt flat, as the mere act of clicking on words left much to be desired. In Twine, unfortunately, that is the only method of interaction as the system works off of hyperlinked text. What I focused on was creating depth in the choices to make them feel less flat. I added sections where you click to reveal an explanation, as well as text that reacts to the player’s progress, attempting to create an interesting experience.</p>
+                    <p>In Task 3, the feedback mainly focused on my writing technique, specifically on grammatical errors or ways to give my writing depth. To address this, I used the tips given to me, changing the pacing to match the tension, slowing the overall pace down to allow the reader to enjoy the story before it's over and most importantly, allowing the characters to ‘demonstrate’ their skills. I also made sure to thoroughly check my work for grammar and spelling mistakes.</p>
+                    <p>The main points of feedback I received from Task 4 were that I should be more specific with my theory and state how it would aid my narrative. In response, I focused on talking about specific aspects of the readings that I actively used in the writing and design of my narrative.</p>
+                    <p>Task 5’s feedback once again centred around grammar, but this also stated that the reference list should be on its own page, so I made sure to add a page break before it.</p>
+                    <p>Task 6 had feedback relating to academic writing issues found in the essay. Addressing this, I attempted to create a more academically sound essay for the exam assignment.</p>
+
+                    <hr>
+
+                    <h3>Author's Growth and Development</h3>
+                    <p>Coming into this course, I understood interactive narratives as engaging stories, but this exam, particularly through the development of 'Doctor's Dilemma,' really deepened my understanding of how intricate the relationship between narrative and technology can be. It showed me how to specifically use academic theory, like Grindle's ideas on desire manipulation and Roberts et al.'s subtle persuasion tactics, to actively shape a player's experience. I now see digital writing not just as crafting words, but as **building systems that can genuinely influence someone's thoughts and actions**, especially when it comes to complex ethical choices like those in my game.</p>
+                    <hr>
+
+                    <h3>Conclusion</h3>
+                    <p>This essay has clearly shown how the interactive narrative 'Doctor's Dilemma' was developed, deeply rooted in academic theory. It highlights how powerful game design can be in shaping what players think and how they act ethically. We've seen how by using principles from Grindle on desire manipulation, Roberts et al. on subtle persuasion, and Chen on creating flow, among others like Wardrip-Fruin et al., Burke, and Hiwiler, the game specifically guides the player. It forms a strong bond with the main patient, setting up a tough moral dilemma where the player will likely want to save their patient, even if, logically, saving the child seems like the 'right' choice.</p>
+                    <p>This project really shows what interactive narratives can do. It's not just about telling a story; it's about getting players deeply involved and exploring how designers can subtly influence their moral choices. 'Doctor's Dilemma' is a good example of how thoughtful design can create experiences that aren't just entertaining, but also make players think hard about ethics, pushing the boundaries of what games can achieve in influencing player behaviour and values.</p>
+
+                    </div>
+
+                <div class="sidebar">
+                    <h3>Publication & Resources</h3>
+                    <ul class="spec-list">
+                        <li><span>Course/Assignment:</span> Final Course Examination/Project</li>
+                        <li><span>Topic Focus:</span> Interactive Narrative Design & Theory</li>
+                        <li><span>Platform/Tool:</span> Twine</li>
+                        <li><span>Tech Stack/Frameworks:</span> Twine, HTML/CSS</li>
+                        <li><span>Co-authors:</span>N/A</li>
+                        <li><span>Submission Date:</span>11 June 2025</li>
+                        <li><span>Project Name:</span> Doctor's Dilemma</li>
+                    </ul>
+                    
+                    <h3>Key Contributions</h3>
+                    <p style="color: #999; font-size: 0.9em; margin-bottom: 0;">This paper demonstrates the direct application of media theory (Grindle, Roberts, Chen) to the intentional design of player desire and moral conflict within an interactive narrative system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="references-section">
+        <div class="container">
+            <h2>References</h2>
+            <p>Please insert your reference list below using standard academic formatting (e.g., APA or MLA).</p>
+            <ul>
+                <li>11 Bit Studio (2014) This War of Mine. [online] Available at: https://store.steampowered.com/app/282070/This_War_of_Mine/ [Accessed 11 Jun. 2025].</li>
+                <li>Angela He (2018) There's This Girl. [online] itch.io. Available at: https://zephyo.itch.io/theres-this-girl [Accessed 11 Jun. 2025].</li>
+                <li>Burke, Y. (2019) Emotional Engagement and Interactive Narrative Design. [pdf] Available at: https://core.ac.uk/download/pdf/211830374.pdf [Accessed 11 Jun. 2025].</li>
+                <li>Chen, J. (2007) ‘Flow in games (and everything else)’, Communications of the ACM, 50(4), pp. 31–34. Available at: https://dl.acm.org/doi/pdf/10.1145/1232743.1232769 [Accessed 11 Jun. 2025].</li>
+                <li>David Shore (2004) House M.D. [online] Available at: https://www.imdb.com/title/tt0412142/ [Accessed 11 Jun. 2025].</li>
+                <li>Dontnod Entertainment (2015) Life is Strange – Episode 1. [online] Available at: https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/ [Accessed 11 Jun. 2025].</li>
+                <li>Duignan, B. (2025) Trolley problem. Encyclopaedia Britannica. [online] Available at: https://www.britannica.com/topic/trolley-problem [Accessed 11 Jun. 2025].</li>
+                <li>Grindle, M.A. (2014) The Power of Digital Storytelling to Influence Human Behaviour: A Research Study of Nonprofit Storytelling. PhD thesis. University of Stirling. Available at: https://www.storre.stir.ac.uk/bitstream/1893/21800/5/MG-PhD-Final.pdf [Accessed 11 Jun. 2025].</li>
+                <li>Hiwiller, Z. (2016) Players Making Decisions: Game Design Essentials and the Art of Understanding Your Players. [pdf] Pearson. Available at: https://ptgmedia.pearsoncmg.com/images/9780134396750/samplepages/9780134396750.pdf [Accessed 11 Jun. 2025].</li>
+                <li>Lucas Pope (2013) Papers, Please. [online] Available at: https://store.steampowered.com/app/239030/Papers_Please/ [Accessed 11 Jun. 2025].</li>
+                <li>Roberts, D.L., McCoy, J. and Isbell, C.L. (2009) Using Influence and Persuasion to Shape Player Experiences. [pdf] Available at: https://www.researchgate.net/profile/David-Roberts-39/publication/228859904\_Using\_influence\_and\_persuasion\_to\_shape\_player\_experiences/links/53fcd6450cf2dca8ffff6338/Using-influence-and-persuasion-to-shape-player-experiences.pdf [Accessed 11 Jun. 2025].</li>
+                <li>Wardrip-Fruin, N. (2009) Agency Reconsidered. In: Proceedings of DiGRA 2009. [pdf] Available at: https://dl.digra.org/index.php/dl/article/download/369/369 [Accessed 11 Jun. 2025].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new game concepts, writing opportunities, or freelance work.</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="copyright-info">
+                <div class="social-links">
+                    <a href="#">GitHub</a> | 
+                    <a href="#">LinkedIn</a> |
+                    <a href="#">Twitter</a>
+                </div>
+                <p>&copy; 2025 Micahel Naidoo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

@@ -10,7 +10,7 @@
     --color-accent: #00BCD4; /* Electric Cyan */
     --color-accent-dark: #008D9B;
     --color-card-bg: #FFFFFF;
-    --color-text-dark: #333333;
+    --color-text-dark: #9e1313;
     --color-input-bg: #2a2c30; /* New color for form fields */
 }
 
@@ -103,7 +103,7 @@ header a:hover {
 
 /* === 3. HERO SECTION STYLES === */
 #hero {
-    background: linear-gradient(rgba(29, 30, 34, 0.8), rgba(29, 30, 34, 1)), url('https://placehold.co/1920x600/1D1E22/E0E0E0?text=Developer+Background') no-repeat center center;
+    background: linear-gradient(rgba(29, 30, 34, 0.8), rgba(29, 30, 34, 1)), no-repeat center center;
     background-size: cover;
     text-align: center;
     padding: 100px 0;
