@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Detail: Celestial Drift - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Custom Styles for Detail Page Layout -->
+    <style>
+        .game-detail-header {
+            background-color: var(--color-bg-primary);
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .game-detail-header h1 {
+            font-size: 3.5em;
+            color: var(--color-accent);
+            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+        }
+
+        .game-detail-header p {
+            font-size: 1.2em;
+            color: var(--color-text-light);
+            max-width: 800px;
+            margin: 10px auto 30px auto;
+        }
+
+        .game-media {
+            margin: 40px auto;
+            max-width: 900px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--color-accent-dark);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Feature/Description Layout */
+        .feature-layout {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .main-content {
+            flex: 3;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: var(--color-input-bg); /* Darker background */
+            border-radius: 8px;
+            height: fit-content;
+            border-left: 5px solid var(--color-accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar h3 {
+            margin-bottom: 15px;
+            color: var(--color-accent);
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .spec-list li {
+            margin-bottom: 10px;
+            color: var(--color-text-light);
+            font-size: 0.95em;
+        }
+
+        .spec-list span {
+            font-weight: 600;
+            color: var(--color-accent);
+            margin-right: 5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            background-color: #2a2c30;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h4 {
+            color: var(--color-accent-dark);
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive Adjustments for Detail Page */
+        @media (max-width: 768px) {
+            .game-detail-header {
+                padding: 40px 0 20px 0;
+            }
+            .game-detail-header h1 {
+                font-size: 2.2em;
+            }
+            .feature-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- HEADER/NAVIGATION (Standard, using existing CSS) -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="images/logo.svg" alt="Michael Naidoo Logo">My Portfolio</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html" class="active">Games</a></li>
+                    <li><a href="writing.html">Writing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- GAME HERO SECTION -->
+    <section class="game-detail-header">
+        <div class="container">
+            <h1>Social Glow</h1>
+            <p>A social life sim, and an artistic commentary on Cancel Culture.</p>
+            <a href="#" class="btn primary">Launch Game Demo</a>
+            <a href="#details" class="btn secondary" style="margin-left: 10px;">View Technical Details</a>
+        </div>
+    </section>
+
+    <!-- MEDIA SECTION (Trailer/Gameplay Video) -->
+    <section class="section">
+        <div class="container game-media">
+            <h2>Gameplay Trailer</h2>
+            <div class="video-container">
+                <!-- Placeholder for a YouTube or Vimeo embedded video -->
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&rel=0&showinfo=0&controls=1" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILS, DESCRIPTION & TECHNICAL SPECS -->
+    <section class="section" id="details">
+        <div class="container">
+            <h2>Game Overview & Development Insights</h2>
+            
+            <div class="feature-layout">
+                
+                <div class="main-content">
+                    <h3>The Vision: Have the player think critically about the nature of cancel culture in society.</h3>
+                    <p>Social Glow stemmed from the question, why is cancel culture so scary? The answer, because it sneaks up on us.</p>
+                    
+                    <p>The game uses a dual status system to track the player's social and professional status, and without showing them the changes, inches the player closer to, or further away from victory. This aspect of 'going in blind' echos the feeling of real society, where you dont always know if you can speak your mind, becauseyou could easily find yourself on the bad side of social media without ever realizing it.</p>
+
+                    <h3>Key Game Features</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>Dual Status System</h4>
+                            <p>Tracks and changes your socail and professional status simultaneously and you move through the game dialog.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Mandatory Side Tasks</h4>
+                            <p>Each environment gives the player 3 side tasks, of which 2 must be completed before they are allowed to progress with the story. This prevents repetitive stale gameplay, keeping the player enguaged for longer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <h3>Technical Specifications</h3>
+                    <ul class="spec-list">
+                        <li><span>Engine:</span> Unity</li>
+                        <li><span>Primary Libraries:</span> Unity library suit</li>
+                        <li><span>Duration:</span> 1 week (Group Development)</li>
+                        <li><span>Current Status:</span> Public Beta 0.3</li>
+                        <li><span>Target Platform:</span> Mobile</li>
+                    </ul>
+                    
+                    <h3>Challenges Solved</h3>
+                    <p style="color: #999; font-size: 0.9em; margin-bottom: 0;">Used satirical examples to make commentary on cancel culture without allowing the game to become too political. Used side tasks to increase the complexity of the game, making it more enguaging that a simple point and click system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (Standard, using existing CSS) -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new game concepts, writing opportunities, or freelance work.</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Standard, using existing CSS) -->
+    <footer>
+        <div class="container">
+            <div class="copyright-info">
+                <div class="social-links">
+                    <a href="#">GitHub</a> | 
+                    <a href="#">LinkedIn</a> |
+                    <a href="#">Twitter</a>
+                </div>
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
