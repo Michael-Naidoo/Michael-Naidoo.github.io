@@ -3,202 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporarily Down for Maintenance | Your Site Name</title>
-    <meta name="description" content="Our website is currently undergoing scheduled maintenance. We'll be back online soon!">
-    
-    <style>
-        /* -------------------------------------------------------------------------- */
-        /* 1. BASE STYLES & RESETS (Modified for independence - removed Google Font) */
-        /* -------------------------------------------------------------------------- */
+    <title>Michael Naidoo | Portfolio</title>
+    <!-- 
+        This is the critical link that pulls in all the global styles 
+        from your css/style.css file, including the new centered carousel styles!
+    -->
+    <link rel="stylesheet" href="css/style.css"> 
 
-        :root {
-            --color-bg-primary: #1D1E22;
-            --color-text-light: #E0E0E0;
-            --color-accent: #00BCD4; /* Electric Cyan */
-            --color-accent-dark: #008D9B;
-            --color-card-bg: #FFFFFF;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            /* Using a common system font stack for independence */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-            line-height: 1.6;
-            color: var(--color-text-light);
-            background-color: var(--color-bg-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 15px;
-        }
-
-        h1, h2 {
-            color: var(--color-accent);
-            line-height: 1.2;
-            margin-top: 0;
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 2. MAINTENANCE PAGE SPECIFIC STYLES */
-        /* -------------------------------------------------------------------------- */
-
-        .maintenance-content {
-            text-align: center;
-            padding: 60px 20px;
-            border-radius: 10px;
-            background-color: rgba(30, 31, 35, 0.95); 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-top: 5px solid var(--color-accent);
-        }
-
-        .maintenance-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 0.2em;
-            color: var(--color-text-light); 
-            font-weight: 700;
-        }
-        
-        .maintenance-content h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: var(--color-accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-
-        .maintenance-content p {
-            font-size: 1.1em;
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .countdown {
-            margin: 30px auto;
-            padding: 15px;
-            border: 2px solid var(--color-accent-dark);
-            border-radius: 5px;
-            display: inline-block;
-            font-size: 1.3em;
-            font-weight: 600;
-            background-color: #2a2c30;
-        }
-
-        .progress-bar-container {
-            width: 80%;
-            max-width: 500px;
-            margin: 20px auto 40px auto;
-            background-color: #333;
-            border-radius: 5px;
-            overflow: hidden;
-            height: 15px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 85%;
-            background-color: var(--color-accent);
-            transition: width 0.5s ease-in-out;
-        }
-
-        /* Reusing your Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn.primary {
-            background-color: var(--color-accent);
-            color: var(--color-bg-primary);
-            border: 2px solid var(--color-accent);
-        }
-
-        .btn.primary:hover {
-            background-color: var(--color-accent-dark);
-            border-color: var(--color-accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 188, 212, 0.4);
-        }
-
-        /* -------------------------------------------------------------------------- */
-        /* 3. RESPONSIVENESS */
-        /* -------------------------------------------------------------------------- */
-        @media (max-width: 600px) {
-            .maintenance-content {
-                padding: 40px 15px;
-            }
-
-            .maintenance-content h1 {
-                font-size: 2.5em;
-            }
-
-            .maintenance-content h2 {
-                font-size: 1.4em;
-            }
-            
-            .maintenance-content p {
-                font-size: 1em;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9em;
-                /* Stack buttons vertically on small screens */
-                display: block; 
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 10px;
-            }
-        }
-
-    </style>
+    <!-- 
+        CAROUSEL SPECIFIC STYLES ARE NOW IN css/style.css.
+        The previous <style> block has been removed for cleaner code.
+    -->
 </head>
 <body>
-
-    <div class="container">
-        <div class="maintenance-content">
-            <h1>⚙️ Site Under Maintenance</h1>
-            <h2>We'll be back shortly!</h2>
-
-            <p>We are currently performing <b>scheduled maintenance</b> to improve our content and functionality.</p>
-            
-            <p>We appreciate your patience while we work.</p>
-
-            <div class="progress-bar-container">
-                <div class="progress-bar"></div>
-            </div>
-
-            <p class="countdown">
-                Estimated completion: 8am Friday, November 21st (Check back soon!)
-            </p>
-
-            <a href="mailto:michaelnaidoo04@gmail.com" class="btn primary">Contact Support</a>
+    <!-- 
+        HEADER & NAVIGATION: Styled by header, nav, .logo, and ul/li/a rules 
+        from css/style.css.
+    -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><img src="images/logo.svg" alt="Michael Naidoo Logo">Michael Naidoo</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games & Projects</a></li>
+                    <li><a href="writing.html">Writing & Articles</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <h2>System Designer & Writer</h2>
+                <p>
+                    Welcome to my portfolio! I specialize in crafting engaging interactive experiences 
+                    and insightful technical narratives, driven by a passion for clean code and compelling stories.
+                </p>
+                <a href="games.html" class="btn primary">View My Work</a>
+            </div>
+        </section>
+        
+        <!-- FEATURED WORK SECTION -->
+        <section id="featured-work" class="section">
+            <div class="container">
+                <h3>Featured Projects</h3>
+                
+                <!-- 
+                    .project-grid and .project-card are heavily styled by 
+                    css/style.css for clear sectioning. 
+                -->
+                <div class="project-grid">
+                    
+                    <!-- GAME CAROUSEL CARD START (Instance 1) -->
+                    <div class="project-card">
+                        
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <!-- Replace these with your actual game screenshots (400x200 resolution recommended) -->
+                                <img src="https://placehold.co/400x200/00BCD4/1D1E22?text=Samurai+Senshi+Scene+1" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/FF5733/1D1E22?text=Samurai+Senshi+Scene+2" alt="Game Screenshot 2">
+                                <img src="https://placehold.co/400x200/33FF57/1D1E22?text=Samurai+Senshi+Scene+3" alt="Game Screenshot 3">
+                                <img src="https://placehold.co/400x200/5733FF/1D1E22?text=Samurai+Senshi+Scene+4" alt="Game Screenshot 4">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Latest Game: Samurai Senshi</h3>
+                        <p class="tagline">A 2D Samurai Themed Fighting Game, Built in Unity.</p>
+                        <ul class="skills-used">
+                            <li>Unity</li>
+                            <li>C#</li>
+                            <li>2D Animation</li>
+                        </ul>
+                        <a href="games.html" alt = "Link to Samurai Senshi itch.io page" class="btn primary">Play Now</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 2) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/FFB347/1D1E22?text=Social+Glow" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/47FFB3/1D1E22?text=Social+Glow" alt="Game Screenshot 2">
+                                <img src="https://placehold.co/400x200/B347FF/1D1E22?text=Social+Glow" alt="Game Screenshot 3">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Social Glow</h3>
+                        <p class="tagline">A social life sim, and an artistic commentary on Cancel Culture.</p>
+                        <ul class="skills-used">
+                            <li>Unity</li>
+                            <li>C#</li>
+                            <li>Systems Based Gameplay</li>
+                        </ul>
+                        <a href="games.html" alt="Link to Social Glow itch.io page" class="btn primary">Play Now</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 3) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/33AACC/1D1E22?text=HillClimb+ChickenHorse+1" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/CC33AA/1D1E22?text=HillClimb+ChickenHorse+2" alt="Game Screenshot 2">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Hillclimb Chicken Horse</h3>
+                        <p class="tagline">How do you reach the end of an impossible level? </br> By editing the level of course.</p>
+                        <ul class="skills-used">
+                            <li>Feature Merging</li>
+                            <li>Open Ended Puzzle</li>
+                            <li>Sandbox</li>
+                        </ul>
+                        <a href="games.html" alt="link to Hillclimb chicken horse itch.io page"class="btn primary">Play Now</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 4) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/FFD700/1D1E22?text=Consequences+Page+1" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/CD5C5C/1D1E22?text=Consequences+Page+2" alt="Game Screenshot 2">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Consequences</h3>
+                        <p class="tagline">An Interactive Storry About The Consequences of Going Out.</p>
+                        <ul class="skills-used">
+                            <li>Twine</li>
+                            <li>Html</li>
+                            <li>Interactive Story</li>
+                        </ul>
+                        <a href="twine/Consequences.html" class="btn primary">Play Now</a>
+                    </div>
+                    
+					<!-- GAME CAROUSEL CARD START (Instance 5) -->
+                    <div class="project-card">
+                        <!-- NEW CAROUSEL STRUCTURE - Using classes instead of IDs -->
+                        <div class="carousel-container">
+                            <div class="image-reel game-carousel">
+                                <img src="https://placehold.co/400x200/808080/1D1E22?text=You+Choose+Page+1" alt="Game Screenshot 1">
+                                <img src="https://placehold.co/400x200/C0C0C0/1D1E22?text=You+Choose+Page+2" alt="Game Screenshot 2">
+                            </div>
+                            <button class="carousel-btn left-btn carousel-prev-btn">&#10094;</button>
+                            <button class="carousel-btn right-btn carousel-next-btn">&#10095;</button>
+                        </div>
+                        <!-- END NEW CAROUSEL STRUCTURE -->
+                        
+                        <h3>Doctor's Dilemma</h3>
+                        <p class="tagline">An Interactive Story Stiuating the Player in an Impossible Choice.</p>
+                        <ul class="skills-used">
+                            <li>Difficult Choice</li>
+                            <li>Twine</li>
+                            <li>Interactive Story</li>
+                        </ul>
+                        <a href="twine/You Choose.html" class="btn primary">Play Now</a>
+                    </div>
+                    
+                    <!-- ARTICLE STATIC BANNER CARD START -->
+                    <div class="project-card">
+                        <!-- Static cover image for the article (400x200 resolution recommended) -->
+                        <img src="https://placehold.co/400x200/00BCD4/FFFFFF?text=Article+Cover+Image" alt="Featured Article Thumbnail">
+                        
+                        <h3>Doctor's Dilemma: Academic Essay</h3>
+                        <p class="tagline">Theoretical and Practical Development of 'Doctor's Dilemma'</p>
+                        <ul class="skills-used">
+                            <li>Technical Writing</li>
+                            <li>Design Theory</li>
+                        </ul>
+                        <a href="Doctor'sDilemmaEssay.html" class="btn secondary">Read Article</a>
+                    </div>
+                    <!-- END ARTICLE CARD -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER/CONTACT FORM SECTION -->
+    <footer id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="tagline">I'm always looking for new opportunities, collaborations, and conversations. Send me a message!</p>
+
+            <!-- 
+                Form uses the Formspree endpoint (action="https://formspree.io/f/mjkajzdq") 
+                and is styled by css/style.css.
+            -->
+            <form action="https://formspree.io/f/mjkajzdq" method="POST" target="_top" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <!-- Use _replyto for Formspree to set the Reply-To header -->
+                    <input type="email" id="email" name="_replyto" required> 
+                    <p class="description">This will help me respond to your query via an email.</p>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <p class="description">What would you like to discuss?</p>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+
+            <div class="copyright-info">
+                <p>&copy; 2025 Michael Naidoo. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://github.com/michael-naidoo" target="_blank">GitHub</a> | 
+                    <a href="#contact" title="Use the form above">Send a Message</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CAROUSEL FUNCTIONALITY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find all carousel containers on the page
+            const carouselContainers = document.querySelectorAll('.carousel-container');
+
+            // Iterate over each container and set up its independent carousel logic
+            carouselContainers.forEach(container => {
+                // Find the elements specific to this container
+                const carousel = container.querySelector('.game-carousel');
+                const prevBtn = container.querySelector('.carousel-prev-btn');
+                const nextBtn = container.querySelector('.carousel-next-btn');
+
+                if (!carousel || !prevBtn || !nextBtn) {
+                    console.error("Missing carousel elements in a container.");
+                    return; // Skip if elements aren't found
+                }
+                
+                // Get all images (slides) inside the reel
+                const slides = carousel.querySelectorAll('img');
+                const totalImages = slides.length;
+                
+                let currentImageIndex = 0;
+                let autoScrollInterval;
+                
+                // Function to move the reel by setting the CSS transform property
+                const updateCarousel = () => {
+                    // Only run if there is more than one image
+                    if (totalImages > 1) {
+                         const translateX = -currentImageIndex * 100;
+                         carousel.style.transform = `translateX(${translateX}%)`;
+                    }
+                };
+                
+                // Manual Navigation: Advance to the next image and reset the timer
+                const showNextImage = () => {
+                    if (totalImages <= 1) return;
+                    currentImageIndex = (currentImageIndex + 1) % totalImages;
+                    updateCarousel();
+                    resetInterval();
+                };
+
+                // Manual Navigation: Go to the previous image and reset the timer
+                const showPrevImage = () => {
+                    if (totalImages <= 1) return;
+                    // The (+ totalImages) ensures the index wraps correctly from 0 to the last image
+                    currentImageIndex = (currentImageIndex - 1 + totalImages) % totalImages;
+                    updateCarousel();
+                    resetInterval();
+                };
+
+                // Event listeners for the manual buttons
+                nextBtn.addEventListener('click', showNextImage);
+                prevBtn.addEventListener('click', showPrevImage);
+                
+                // Automatic Scrolling: Starts the timer
+                const startInterval = () => {
+                    if (totalImages <= 1) return; // Don't start interval if only one image exists
+                    autoScrollInterval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % totalImages;
+                        updateCarousel();
+                    }, 5000); // 5000 milliseconds = 5 seconds
+                };
+
+                // Resets the timer so user interaction doesn't immediately cause a slide
+                const resetInterval = () => {
+                    clearInterval(autoScrollInterval);
+                    startInterval();
+                };
+
+                // Start the automatic scrolling for this specific carousel
+                startInterval();
+            });
+        });
+    </script>
 </body>
 </html>

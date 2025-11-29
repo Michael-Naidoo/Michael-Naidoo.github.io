@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporarily Down for Maintenance | Your Site Name</title>
+    <meta name="description" content="Our website is currently undergoing scheduled maintenance. We'll be back online soon!">
+    
+    <style>
+        /* -------------------------------------------------------------------------- */
+        /* 1. BASE STYLES & RESETS (Modified for independence - removed Google Font) */
+        /* -------------------------------------------------------------------------- */
+
+        :root {
+            --color-bg-primary: #1D1E22;
+            --color-text-light: #E0E0E0;
+            --color-accent: #00BCD4; /* Electric Cyan */
+            --color-accent-dark: #008D9B;
+            --color-card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Using a common system font stack for independence */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-light);
+            background-color: var(--color-bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 15px;
+        }
+
+        h1, h2 {
+            color: var(--color-accent);
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* 2. MAINTENANCE PAGE SPECIFIC STYLES */
+        /* -------------------------------------------------------------------------- */
+
+        .maintenance-content {
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 10px;
+            background-color: rgba(30, 31, 35, 0.95); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-top: 5px solid var(--color-accent);
+        }
+
+        .maintenance-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.2em;
+            color: var(--color-text-light); 
+            font-weight: 700;
+        }
+        
+        .maintenance-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .maintenance-content p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown {
+            margin: 30px auto;
+            padding: 15px;
+            border: 2px solid var(--color-accent-dark);
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1.3em;
+            font-weight: 600;
+            background-color: #2a2c30;
+        }
+
+        .progress-bar-container {
+            width: 80%;
+            max-width: 500px;
+            margin: 20px auto 40px auto;
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 15px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 85%;
+            background-color: var(--color-accent);
+            transition: width 0.5s ease-in-out;
+        }
+
+        /* Reusing your Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn.primary {
+            background-color: var(--color-accent);
+            color: var(--color-bg-primary);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn.primary:hover {
+            background-color: var(--color-accent-dark);
+            border-color: var(--color-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 188, 212, 0.4);
+        }
+
+        /* -------------------------------------------------------------------------- */
+        /* 3. RESPONSIVENESS */
+        /* -------------------------------------------------------------------------- */
+        @media (max-width: 600px) {
+            .maintenance-content {
+                padding: 40px 15px;
+            }
+
+            .maintenance-content h1 {
+                font-size: 2.5em;
+            }
+
+            .maintenance-content h2 {
+                font-size: 1.4em;
+            }
+            
+            .maintenance-content p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+                /* Stack buttons vertically on small screens */
+                display: block; 
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="maintenance-content">
+            <h1>⚙️ Site Under Maintenance</h1>
+            <h2>We'll be back shortly!</h2>
+
+            <p>We are currently performing <b>scheduled maintenance</b> to improve our content and functionality.</p>
+            
+            <p>We appreciate your patience while we work.</p>
+
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+
+            <p class="countdown">
+                Estimated completion: 8am Friday, November 21st (Check back soon!)
+            </p>
+
+            <a href="mailto:michaelnaidoo04@gmail.com" class="btn primary">Contact Support</a>
+        </div>
+    </div>
+
+</body>
+</html>
