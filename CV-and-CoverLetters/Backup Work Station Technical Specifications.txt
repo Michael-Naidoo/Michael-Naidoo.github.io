@@ -1,0 +1,9 @@
+Model: MacBook Pro 14-inch (2025/2026 Model)
+
+Processor: Apple M5 Chip (10-core CPU / 10-core GPU)
+
+Memory: 16GB Unified Memory (High-bandwidth for multi-container Docker/SQL environments)
+
+Storage: 512GB SSD (Ultra-fast read/write speeds for compiling code)
+
+Architecture: ARM-based Apple Silicon (Native Unix environment for Node.js and PostgreSQL)
